@@ -1,0 +1,5 @@
+package com.parkgrid.auth.controller;
+
+public class AuthController {
+
+}

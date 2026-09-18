@@ -1,0 +1,5 @@
+package com.parkgrid.auth.model;
+
+public class Role {
+
+}
