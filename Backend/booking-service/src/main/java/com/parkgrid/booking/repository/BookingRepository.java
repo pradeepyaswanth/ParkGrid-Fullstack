@@ -1,0 +1,29 @@
+package com.parkgrid.booking.repository;
+
+import java.time.LocalDateTime;
+import java.util.List;
+
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.jpa.repository.Query;
+import org.springframework.data.repository.query.Param;
+
+import com.parkgrid.booking.model.Booking;
+import com.parkgrid.booking.model.BookingStatus;
+
+public interface BookingRepository extends JpaRepository<Booking, Long> {
+
+    List<Booking> findByUserId(Long userId);
+
+    @Query("""
+        SELECT b FROM Booking b
+        WHERE b.slotId = :slotId
+        AND b.status = :status
+        AND b.startTime < :endTime
+        AND b.endTime > :startTime
+    """)
+    List<Booking> findConflictingBookings(
+            @Param("slotId") Long slotId,
+            @Param("startTime") LocalDateTime startTime,
+            @Param("endTime") LocalDateTime endTime,
+            @Param("status") BookingStatus status);
+}

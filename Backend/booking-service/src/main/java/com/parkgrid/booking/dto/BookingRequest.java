@@ -1,0 +1,78 @@
+package com.parkgrid.booking.dto;
+
+import java.time.LocalDateTime;
+
+import jakarta.validation.constraints.Future;
+import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.NotNull;
+
+public class BookingRequest {
+
+    @NotNull
+    private Long userId;
+
+    @NotNull
+    private Long parkingId;
+
+    @NotNull
+    private Long slotId;
+
+    @NotBlank
+    private String vehicleNumber;
+
+    @NotNull
+    @Future
+    private LocalDateTime startTime;
+
+    @NotNull
+    @Future
+    private LocalDateTime endTime;
+
+    public Long getUserId() {
+        return userId;
+    }
+
+    public void setUserId(Long userId) {
+        this.userId = userId;
+    }
+
+    public Long getParkingId() {
+        return parkingId;
+    }
+
+    public void setParkingId(Long parkingId) {
+        this.parkingId = parkingId;
+    }
+
+    public Long getSlotId() {
+        return slotId;
+    }
+
+    public void setSlotId(Long slotId) {
+        this.slotId = slotId;
+    }
+
+    public String getVehicleNumber() {
+        return vehicleNumber;
+    }
+
+    public void setVehicleNumber(String vehicleNumber) {
+        this.vehicleNumber = vehicleNumber;
+    }
+
+    public LocalDateTime getStartTime() {
+        return startTime;
+    }
+
+    public void setStartTime(LocalDateTime startTime) {
+        this.startTime = startTime;
+    }
+
+    public LocalDateTime getEndTime() {
+        return endTime;
+    }
+
+    public void setEndTime(LocalDateTime endTime) {
+        this.endTime = endTime;
+    }
+}
