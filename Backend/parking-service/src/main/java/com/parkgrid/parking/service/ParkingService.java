@@ -26,7 +26,7 @@ public class ParkingService {
         this.slotRepository = slotRepository;
     }
 
-    // Create parking
+    // CREATE PARKING
     public ParkingResponse createParking(ParkingRequest request) {
 
         Parking parking = new Parking(
@@ -50,7 +50,7 @@ public class ParkingService {
         return convertToResponse(saved);
     }
 
-    // Get all parking locations
+    // GET ALL PARKING LOCATIONS
     public List<ParkingResponse> getAllParking() {
 
         return parkingRepository.findAll()
@@ -59,7 +59,7 @@ public class ParkingService {
                 .toList();
     }
 
-    // Get parking by ID
+    // GET PARKING BY ID
     public ParkingResponse getParkingById(Long id) {
 
         Parking parking = parkingRepository.findById(id)
@@ -69,21 +69,16 @@ public class ParkingService {
         return convertToResponse(parking);
     }
 
-    // Delete parking
-    public void deleteParking(Long id) {
+    // GET ONE SLOT BY ID
+    // Used by Booking Service
+    public ParkingSlot getSlotById(Long slotId) {
 
-        if (!parkingRepository.existsById(id)) {
-            throw new RuntimeException("Parking not found");
-        }
-
-        List<ParkingSlot> slots =
-                slotRepository.findByParkingId(id);
-
-        slotRepository.deleteAll(slots);
-        parkingRepository.deleteById(id);
+        return slotRepository.findById(slotId)
+                .orElseThrow(() ->
+                        new RuntimeException("Slot not found"));
     }
 
-    // Get available slots
+    // GET AVAILABLE SLOTS
     public List<ParkingSlot> getAvailableSlots(Long parkingId) {
 
         return slotRepository.findByParkingIdAndStatus(
@@ -92,7 +87,8 @@ public class ParkingService {
         );
     }
 
-    // Update slot status
+    // UPDATE SLOT STATUS
+    // Used by Booking Service
     public ParkingSlot updateSlotStatus(
             Long slotId,
             SlotStatus status) {
@@ -105,7 +101,8 @@ public class ParkingService {
 
         slot.setStatus(status);
 
-        ParkingSlot updated = slotRepository.save(slot);
+        ParkingSlot updated =
+                slotRepository.save(slot);
 
         updateAvailableCount(
                 slot.getParkingId(),
@@ -116,6 +113,7 @@ public class ParkingService {
         return updated;
     }
 
+    // UPDATE AVAILABLE SLOT COUNT
     private void updateAvailableCount(
             Long parkingId,
             SlotStatus oldStatus,
@@ -129,23 +127,45 @@ public class ParkingService {
                 .orElseThrow(() ->
                         new RuntimeException("Parking not found"));
 
-        if (oldStatus == SlotStatus.AVAILABLE &&
-                newStatus != SlotStatus.AVAILABLE) {
+        // AVAILABLE → RESERVED/OCCUPIED
+        if (oldStatus == SlotStatus.AVAILABLE
+                && newStatus != SlotStatus.AVAILABLE) {
 
             parking.setAvailableSlots(
-                    parking.getAvailableSlots() - 1);
+                    parking.getAvailableSlots() - 1
+            );
         }
 
-        if (oldStatus != SlotStatus.AVAILABLE &&
-                newStatus == SlotStatus.AVAILABLE) {
+        // RESERVED/OCCUPIED → AVAILABLE
+        if (oldStatus != SlotStatus.AVAILABLE
+                && newStatus == SlotStatus.AVAILABLE) {
 
             parking.setAvailableSlots(
-                    parking.getAvailableSlots() + 1);
+                    parking.getAvailableSlots() + 1
+            );
         }
 
         parkingRepository.save(parking);
     }
 
+    // DELETE PARKING
+    public void deleteParking(Long id) {
+
+        if (!parkingRepository.existsById(id)) {
+
+            throw new RuntimeException(
+                    "Parking not found");
+        }
+
+        List<ParkingSlot> slots =
+                slotRepository.findByParkingId(id);
+
+        slotRepository.deleteAll(slots);
+
+        parkingRepository.deleteById(id);
+    }
+
+    // CONVERT PARKING TO RESPONSE
     private ParkingResponse convertToResponse(
             Parking parking) {
 
