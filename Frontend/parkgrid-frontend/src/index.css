@@ -1,0 +1,229 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: #fff0dc;
+    color: #1f1f1f;
+}
+
+/* NAVBAR */
+
+.navbar {
+    height: 70px;
+    background: #7a3812;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 60px;
+}
+
+.logo {
+    color: white;
+    text-decoration: none;
+    font-size: 25px;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.logo-icon {
+    background: #9bb26d;
+    border-radius: 50%;
+    padding: 5px;
+    font-size: 18px;
+}
+
+.nav-links {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+}
+
+.nav-links a {
+    color: white;
+    text-decoration: none;
+    font-size: 15px;
+}
+
+.nav-login {
+    border: 1px solid white;
+    padding: 10px 20px;
+    border-radius: 6px;
+}
+
+.nav-register {
+    background: #9bb26d;
+    color: #17210d !important;
+    padding: 11px 20px;
+    border-radius: 6px;
+    font-weight: bold;
+}
+
+/* HERO */
+
+.hero {
+    min-height: 470px;
+    padding: 80px 10%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: #fff0dc;
+}
+
+.hero-content {
+    max-width: 650px;
+}
+
+.hero-small {
+    color: #527525;
+    font-weight: bold;
+    letter-spacing: 2px;
+    margin-bottom: 15px;
+}
+
+.hero h1 {
+    font-size: 58px;
+    line-height: 1.05;
+    margin-bottom: 25px;
+}
+
+.hero h1 span {
+    color: #527525;
+}
+
+.hero-description {
+    font-size: 20px;
+    line-height: 1.6;
+    color: #555;
+    max-width: 600px;
+}
+
+.hero-buttons {
+    margin-top: 30px;
+    display: flex;
+    gap: 15px;
+}
+
+.btn-primary,
+.btn-secondary {
+    text-decoration: none;
+    padding: 14px 28px;
+    border-radius: 6px;
+    font-weight: bold;
+}
+
+.btn-primary {
+    background: #527525;
+    color: white;
+}
+
+.btn-secondary {
+    border: 1px solid #527525;
+    color: #527525;
+}
+
+/* PARKING CARD */
+
+.hero-card {
+    width: 260px;
+    height: 260px;
+    background: #9bb26d;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: #20320f;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+}
+
+.parking-icon {
+    width: 100px;
+    height: 100px;
+    background: #527525;
+    color: white;
+    border-radius: 12px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 60px;
+    font-weight: bold;
+}
+
+.hero-card h2 {
+    margin-top: 15px;
+}
+
+/* FEATURES */
+
+.features {
+    background: #9bb26d;
+    display: flex;
+    justify-content: space-around;
+    padding: 35px 10%;
+}
+
+.feature {
+    text-align: center;
+    width: 30%;
+}
+
+.feature-icon {
+    font-size: 35px;
+    margin-bottom: 10px;
+}
+
+.feature h3 {
+    color: #20320f;
+    margin-bottom: 8px;
+}
+
+.feature p {
+    color: #26311b;
+}
+
+/* MOBILE */
+
+@media (max-width: 800px) {
+
+    .navbar {
+        padding: 0 20px;
+    }
+
+    .nav-links {
+        gap: 10px;
+    }
+
+    .nav-links a {
+        font-size: 12px;
+    }
+
+    .hero {
+        flex-direction: column;
+        text-align: center;
+        gap: 50px;
+        padding: 50px 20px;
+    }
+
+    .hero h1 {
+        font-size: 42px;
+    }
+
+    .hero-buttons {
+        justify-content: center;
+    }
+
+    .features {
+        flex-direction: column;
+        gap: 30px;
+    }
+
+    .feature {
+        width: 100%;
+    }
+}

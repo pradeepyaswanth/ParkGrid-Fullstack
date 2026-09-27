@@ -1,5 +1,0 @@
-package com.parkgrid.auth.repository;
-
-public class UserRepository {
-
-}
