@@ -40,6 +40,7 @@ public class AuthService {
 
         user.setName(request.getName());
         user.setEmail(request.getEmail());
+
         user.setPassword(
                 passwordEncoder.encode(request.getPassword()));
 
@@ -48,30 +49,43 @@ public class AuthService {
         String otp = generateOtp();
 
         user.setOtp(otp);
+
         user.setOtpExpiry(
-                System.currentTimeMillis() + 5 * 60 * 1000);
+                System.currentTimeMillis()
+                        + 5 * 60 * 1000);
 
         user.setVerified(false);
 
         userRepository.save(user);
 
         // For development/testing
-        System.out.println("OTP for " + user.getEmail() + " = " + otp);
+        System.out.println(
+                "OTP for "
+                + user.getEmail()
+                + " = "
+                + otp);
 
         return "Registration successful. OTP: " + otp;
     }
 
-    public String verifyOtp(String email, String otp) {
+    public String verifyOtp(
+            String email,
+            String otp) {
 
-        User user = userRepository.findByEmail(email)
+        User user = userRepository
+                .findByEmail(email)
                 .orElseThrow(() ->
-                    new RuntimeException("User not found"));
+                    new RuntimeException(
+                        "User not found"));
 
-        if (System.currentTimeMillis() > user.getOtpExpiry()) {
+        if (System.currentTimeMillis()
+                > user.getOtpExpiry()) {
+
             return "OTP expired";
         }
 
         if (!user.getOtp().equals(otp)) {
+
             return "Invalid OTP";
         }
 
@@ -83,27 +97,35 @@ public class AuthService {
         return "OTP verified successfully";
     }
 
-    public AuthResponse login(LoginRequest request) {
+    public AuthResponse login(
+            LoginRequest request) {
 
-        User user = userRepository.findByEmail(request.getEmail())
+        User user = userRepository
+                .findByEmail(request.getEmail())
                 .orElseThrow(() ->
-                    new RuntimeException("Invalid email or password"));
+                    new RuntimeException(
+                        "Invalid email or password"));
 
         if (!passwordEncoder.matches(
                 request.getPassword(),
                 user.getPassword())) {
 
-            throw new RuntimeException("Invalid email or password");
+            throw new RuntimeException(
+                    "Invalid email or password");
         }
 
         if (!user.isVerified()) {
-            throw new RuntimeException("Please verify OTP first");
+
+            throw new RuntimeException(
+                    "Please verify OTP first");
         }
 
-        String token = jwtService.generateToken(user);
+        String token =
+                jwtService.generateToken(user);
 
         return new AuthResponse(
                 token,
+                user.getId(),
                 user.getRole().name(),
                 "Login successful"
         );

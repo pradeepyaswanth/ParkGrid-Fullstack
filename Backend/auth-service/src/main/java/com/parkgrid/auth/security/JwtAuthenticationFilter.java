@@ -3,11 +3,11 @@ package com.parkgrid.auth.security;
 import java.io.IOException;
 
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
+import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.context.SecurityContextHolder;
+import org.springframework.security.web.authentication.WebAuthenticationDetailsSource;
 import org.springframework.stereotype.Component;
 import org.springframework.web.filter.OncePerRequestFilter;
-
-import com.parkgrid.auth.repository.UserRepository;
 
 import jakarta.servlet.FilterChain;
 import jakarta.servlet.ServletException;
@@ -18,14 +18,9 @@ import jakarta.servlet.http.HttpServletResponse;
 public class JwtAuthenticationFilter extends OncePerRequestFilter {
 
     private final JwtService jwtService;
-    private final UserRepository userRepository;
 
-    public JwtAuthenticationFilter(
-            JwtService jwtService,
-            UserRepository userRepository) {
-
+    public JwtAuthenticationFilter(JwtService jwtService) {
         this.jwtService = jwtService;
-        this.userRepository = userRepository;
     }
 
     @Override
@@ -35,38 +30,128 @@ public class JwtAuthenticationFilter extends OncePerRequestFilter {
             FilterChain filterChain)
             throws ServletException, IOException {
 
-        String header =
+        /*
+         * ---------------------------------------------------------
+         * 1. Authentication endpoints do NOT need JWT.
+         * ---------------------------------------------------------
+         *
+         * These endpoints must be accessible before the user
+         * receives a JWT.
+         */
+        String path = request.getServletPath();
+
+        if (path.equals("/api/auth/login")
+                || path.equals("/api/auth/register")
+                || path.equals("/api/auth/verify-otp")) {
+
+            filterChain.doFilter(request, response);
+            return;
+        }
+
+        /*
+         * ---------------------------------------------------------
+         * 2. Read Authorization header.
+         * ---------------------------------------------------------
+         */
+        String authorizationHeader =
                 request.getHeader("Authorization");
 
-        if (header != null && header.startsWith("Bearer ")) {
+        /*
+         * If there is no Authorization header,
+         * simply continue the request.
+         *
+         * SecurityConfig will decide whether the endpoint
+         * requires authentication.
+         */
+        if (authorizationHeader == null
+                || !authorizationHeader.startsWith("Bearer ")) {
 
-            String token = header.substring(7);
+            filterChain.doFilter(request, response);
+            return;
+        }
 
+        /*
+         * ---------------------------------------------------------
+         * 3. Extract JWT.
+         * ---------------------------------------------------------
+         */
+        String token =
+                authorizationHeader.substring(7);
+
+        try {
+
+            /*
+             * -----------------------------------------------------
+             * 4. Validate JWT.
+             * -----------------------------------------------------
+             */
             if (jwtService.isValid(token)) {
 
+                /*
+                 * -------------------------------------------------
+                 * 5. Extract user information from JWT.
+                 * -------------------------------------------------
+                 */
                 String email =
                         jwtService.extractEmail(token);
 
-                userRepository.findByEmail(email)
-                    .ifPresent(user -> {
+                String role =
+                        jwtService.extractRole(token);
 
-                        UsernamePasswordAuthenticationToken auth =
-                            new UsernamePasswordAuthenticationToken(
-                                user.getEmail(),
+                /*
+                 * -------------------------------------------------
+                 * 6. Create Spring Security authorities.
+                 *
+                 * ROLE_USER
+                 * ROLE_ADMIN
+                 * -------------------------------------------------
+                 */
+                SimpleGrantedAuthority authority =
+                        new SimpleGrantedAuthority(
+                                "ROLE_" + role);
+
+                /*
+                 * -------------------------------------------------
+                 * 7. Create authenticated user.
+                 * -------------------------------------------------
+                 */
+                UsernamePasswordAuthenticationToken authentication =
+                        new UsernamePasswordAuthenticationToken(
+                                email,
                                 null,
-                                java.util.List.of(
-                                    () -> "ROLE_" +
-                                        user.getRole().name()
-                                )
-                            );
+                                java.util.List.of(authority));
 
-                        SecurityContextHolder
-                                .getContext()
-                                .setAuthentication(auth);
-                    });
+                authentication.setDetails(
+                        new WebAuthenticationDetailsSource()
+                                .buildDetails(request));
+
+                /*
+                 * -------------------------------------------------
+                 * 8. Put authentication into SecurityContext.
+                 * -------------------------------------------------
+                 */
+                SecurityContextHolder
+                        .getContext()
+                        .setAuthentication(authentication);
             }
+
+        } catch (Exception e) {
+
+            /*
+             * Invalid JWT:
+             *
+             * We do NOT manually return 403 here.
+             * We simply continue without authentication.
+             *
+             * Spring Security will then reject protected
+             * endpoints appropriately.
+             */
+            SecurityContextHolder.clearContext();
         }
 
+        /*
+         * Continue request.
+         */
         filterChain.doFilter(request, response);
     }
 }

@@ -196,3 +196,53 @@
 2026-09-27 10:34:43.317: [INFO] BookmarkModelLoaded, ids_reassigned: 0
 2026-09-27 10:34:43.317: [INFO] BookmarksLoadDropped droppedNodes=0
 2026-09-27 10:34:43.317: [INFO] BookmarksSnapshot Startup total=0 bar=0 other=0 mobile=0 showBar=0 showBarNTP=1
+2026-09-27 11:19:39.371: [INFO] BookmarksSnapshot Shutdown total=0 bar=0 other=0 mobile=0 showBar=0 showBarNTP=1
+2026-09-28 10:50:53.875: [INFO] CurrentProfilePath: C:\College\ParkGrid-Fullstack\Backend\.metadata\.plugins\org.eclipse.swt\EBWebView\Default
+2026-09-28 10:50:53.875: [INFO] Profiles total count: 1
+2026-09-28 10:50:53.875: [INFO] Profile: name=Profile 1 path=C:\College\ParkGrid-Fullstack\Backend\.metadata\.plugins\org.eclipse.swt\EBWebView\Default lastActive=2026-09-27T10:34:44.039Z
+2026-09-28 10:50:53.875: [INFO] LastUsedProfileDir: C:\College\ParkGrid-Fullstack\Backend\.metadata\.plugins\org.eclipse.swt\EBWebView\Default
+2026-09-28 10:50:53.875: [INFO] MostRecentlyActiveProfile: name=Profile 1 path=C:\College\ParkGrid-Fullstack\Backend\.metadata\.plugins\org.eclipse.swt\EBWebView\Default lastActive=2026-09-27T10:34:44.039Z
+2026-09-28 10:50:53.875: [INFO] OnDoneLoading sync enabled: 0
+2026-09-28 10:50:53.875: [INFO] BookmarkModelLoaded, ids_reassigned: 0
+2026-09-28 10:50:53.875: [INFO] BookmarksLoadDropped droppedNodes=0
+2026-09-28 10:50:53.875: [INFO] BookmarksSnapshot Startup total=0 bar=0 other=0 mobile=0 showBar=0 showBarNTP=1
+2026-10-03 16:44:48.094: [INFO] CurrentProfilePath: C:\College\ParkGrid-Fullstack\Backend\.metadata\.plugins\org.eclipse.swt\EBWebView\Default
+2026-10-03 16:44:48.094: [INFO] Profiles total count: 1
+2026-10-03 16:44:48.094: [INFO] Profile: name=Profile 1 path=C:\College\ParkGrid-Fullstack\Backend\.metadata\.plugins\org.eclipse.swt\EBWebView\Default lastActive=2026-09-28T10:50:54.046Z
+2026-10-03 16:44:48.094: [INFO] LastUsedProfileDir: C:\College\ParkGrid-Fullstack\Backend\.metadata\.plugins\org.eclipse.swt\EBWebView\Default
+2026-10-03 16:44:48.094: [INFO] MostRecentlyActiveProfile: name=Profile 1 path=C:\College\ParkGrid-Fullstack\Backend\.metadata\.plugins\org.eclipse.swt\EBWebView\Default lastActive=2026-09-28T10:50:54.046Z
+2026-10-03 16:44:48.094: [INFO] OnDoneLoading sync enabled: 0
+2026-10-03 16:44:48.094: [INFO] BookmarkModelLoaded, ids_reassigned: 0
+2026-10-03 16:44:48.094: [INFO] BookmarksLoadDropped droppedNodes=0
+2026-10-03 16:44:48.094: [INFO] BookmarksSnapshot Startup total=0 bar=0 other=0 mobile=0 showBar=0 showBarNTP=1
+2026-10-03 21:46:42.347: [INFO] BookmarksSnapshot Shutdown total=0 bar=0 other=0 mobile=0 showBar=0 showBarNTP=1
+2026-10-26 03:48:32.276: [INFO] CurrentProfilePath: C:\College\ParkGrid-Fullstack\Backend\.metadata\.plugins\org.eclipse.swt\EBWebView\Default
+2026-10-26 03:48:32.276: [INFO] Profiles total count: 1
+2026-10-26 03:48:32.277: [INFO] Profile: name=Profile 1 path=C:\College\ParkGrid-Fullstack\Backend\.metadata\.plugins\org.eclipse.swt\EBWebView\Default lastActive=2026-10-03T16:45:11.709Z
+2026-10-26 03:48:32.277: [INFO] LastUsedProfileDir: C:\College\ParkGrid-Fullstack\Backend\.metadata\.plugins\org.eclipse.swt\EBWebView\Default
+2026-10-26 03:48:32.277: [INFO] MostRecentlyActiveProfile: name=Profile 1 path=C:\College\ParkGrid-Fullstack\Backend\.metadata\.plugins\org.eclipse.swt\EBWebView\Default lastActive=2026-10-03T16:45:11.709Z
+2026-10-26 03:48:32.277: [INFO] OnDoneLoading sync enabled: 0
+2026-10-26 03:48:32.277: [INFO] BookmarkModelLoaded, ids_reassigned: 0
+2026-10-26 03:48:32.277: [INFO] BookmarksLoadDropped droppedNodes=0
+2026-10-26 03:48:32.277: [INFO] BookmarksSnapshot Startup total=0 bar=0 other=0 mobile=0 showBar=0 showBarNTP=1
+2026-10-26 05:31:20.857: [INFO] BookmarksSnapshot Shutdown total=0 bar=0 other=0 mobile=0 showBar=0 showBarNTP=1
+2026-10-27 08:48:38.466: [INFO] CurrentProfilePath: C:\College\ParkGrid-Fullstack\Backend\.metadata\.plugins\org.eclipse.swt\EBWebView\Default
+2026-10-27 08:48:38.466: [INFO] Profiles total count: 1
+2026-10-27 08:48:38.466: [INFO] Profile: name=Profile 1 path=C:\College\ParkGrid-Fullstack\Backend\.metadata\.plugins\org.eclipse.swt\EBWebView\Default lastActive=2026-10-26T03:48:38.219Z
+2026-10-27 08:48:38.466: [INFO] LastUsedProfileDir: C:\College\ParkGrid-Fullstack\Backend\.metadata\.plugins\org.eclipse.swt\EBWebView\Default
+2026-10-27 08:48:38.466: [INFO] MostRecentlyActiveProfile: name=Profile 1 path=C:\College\ParkGrid-Fullstack\Backend\.metadata\.plugins\org.eclipse.swt\EBWebView\Default lastActive=2026-10-26T03:48:38.219Z
+2026-10-27 08:48:38.466: [INFO] OnDoneLoading sync enabled: 0
+2026-10-27 08:48:38.466: [INFO] BookmarkModelLoaded, ids_reassigned: 0
+2026-10-27 08:48:38.466: [INFO] BookmarksLoadDropped droppedNodes=0
+2026-10-27 08:48:38.466: [INFO] BookmarksSnapshot Startup total=0 bar=0 other=0 mobile=0 showBar=0 showBarNTP=1
+2026-10-27 09:33:13.802: [INFO] BookmarksSnapshot Shutdown total=0 bar=0 other=0 mobile=0 showBar=0 showBarNTP=1
+2026-10-29 08:20:05.446: [INFO] CurrentProfilePath: C:\College\ParkGrid-Fullstack\Backend\.metadata\.plugins\org.eclipse.swt\EBWebView\Default
+2026-10-29 08:20:05.446: [INFO] Profiles total count: 1
+2026-10-29 08:20:05.447: [INFO] Profile: name=Profile 1 path=C:\College\ParkGrid-Fullstack\Backend\.metadata\.plugins\org.eclipse.swt\EBWebView\Default lastActive=2026-10-27T08:48:54.088Z
+2026-10-29 08:20:05.447: [INFO] LastUsedProfileDir: C:\College\ParkGrid-Fullstack\Backend\.metadata\.plugins\org.eclipse.swt\EBWebView\Default
+2026-10-29 08:20:05.447: [INFO] MostRecentlyActiveProfile: name=Profile 1 path=C:\College\ParkGrid-Fullstack\Backend\.metadata\.plugins\org.eclipse.swt\EBWebView\Default lastActive=2026-10-27T08:48:54.088Z
+2026-10-29 08:20:05.447: [INFO] OnDoneLoading sync enabled: 0
+2026-10-29 08:20:05.447: [INFO] BookmarkModelLoaded, ids_reassigned: 0
+2026-10-29 08:20:05.447: [INFO] BookmarksLoadDropped droppedNodes=0
+2026-10-29 08:20:05.447: [INFO] BookmarksSnapshot Startup total=0 bar=0 other=0 mobile=0 showBar=0 showBarNTP=1
+2026-10-29 08:26:45.148: [INFO] BookmarksSnapshot Shutdown total=0 bar=0 other=0 mobile=0 showBar=0 showBarNTP=1

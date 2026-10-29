@@ -1,8 +1,88 @@
-0:46:54 Microsoft.UnloadController.IsUnclosableApp_IsNotWebApp
+1:42:48 Tab6 RenderProcessGone
+1:42:48 Microsoft.UnloadController.ClearUnloadState
+1:42:48 Microsoft.Shutdown.TabStripModel.RunUnloadListenerBeforeClosing_false
+1:42:48 Microsoft.Shutdown.TabStripModel.InternalCloseTabsImpl_ClosedAll
+1:42:48 Microsoft.Shutdown.TabStripModel.SendDetachWebContentsNotifications
+1:42:48 Microsoft.UnloadController.ClearUnloadState
+1:42:48 Browser6 Close Tab6 at 0
+1:42:48 Tab6 WebContentsDestroyed
+1:42:48 Microsoft.UnloadController.IsUnclosableApp_IsNotWebApp
+1:42:48 Microsoft.UnloadController.HasCompletedUnloadProcessing_True
+1:42:48 Microsoft.Shutdown.OnWindowClosing
+1:42:48 Microsoft.UnloadController.IsUnclosableApp_IsNotWebApp
+1:42:48 Microsoft.UnloadController.HasCompletedUnloadProcessing_True
+1:42:48 Microsoft.Shutdown.OnWindowClosing_MaybeClearBrowsingDataOnExit
+1:42:48 Microsoft.Shutdown.OnWindowClosing_ClearBrowsingDataOnExitNotInProgress
+1:42:48 Microsoft.Shutdown.OnWindowClosingPostClearBrowsingData_NoBrowsingDataCleared
+1:42:48 Widget Closed: BrowserWidget
+1:42:48 Microsoft.UnloadController.TabStripEmpty
+1:42:48 Microsoft.UnloadController.HasCompletedUnloadProcessing_True
+1:42:48 Microsoft.Shutdown.OnWindowClosing
+1:42:48 Microsoft.Shutdown.OnWindowClosing_DeleteScheduled
+1:42:48 Microsoft.Last_Browser_Removed
+1:42:49 Microsoft.Shutdown.ShutdownIfNoBrowsers
+1:42:49 Microsoft.Shutdown.SetTryingToQuit_Quitting
+1:42:49 Microsoft.Shutdown.NotifyAppTerminating
+1:42:49 Microsoft.Shutdown.OnAppExiting
+1:42:49 Microsoft.Shutdown.HandleAppExitingForPlatform_Aura
+1:42:49 Microsoft.Shutdown.HandleAppExitingForPlatform_Aura.NotificationUIManager_StartShutdown
+1:42:49 Microsoft.Shutdown.HandleAppExitingForPlatform_Aura.CloseAllSecondaryWidgets
+1:42:49 Shutdown
 0:00:00 Startup
 0:00:00 Microsoft.DeleteProfileHelper.CleanUpEphemeralProfiles
 0:00:00 Microsoft.DeleteProfileHelper.CleanUpDeletedProfiles
-0:00:00 Microsoft.NewBrowser_Popup
+0:00:00 Microsoft.BrowserList.AddBrowser
+0:00:00 Browser1 Insert active Tab1 at 0
+0:00:00 Tab1 StartNav1 #auto_toplevel
+0:00:00 Tab1 FinishNav1
+0:00:00 Tab1 PageLoad
+0:00:01 Tab1 StartNav2 #typed
+0:00:01 Memory Pressure: Critical
+0:00:01 Tab1 FinishNav2
+0:00:01 Tab1 PageLoad
+0:14:01 Memory Pressure: Moderate
+0:14:11 Memory Pressure: None
+0:16:01 Memory Pressure: Moderate
+0:16:06 Memory Pressure: None
+0:16:21 Memory Pressure: Moderate
+0:16:31 Memory Pressure: Moderate
+0:16:41 Memory Pressure: Moderate
+0:16:51 Memory Pressure: Moderate
+0:17:01 Memory Pressure: Moderate
+0:17:11 Memory Pressure: Moderate
+0:17:21 Memory Pressure: Moderate
+0:17:31 Memory Pressure: Moderate
+0:17:36 Memory Pressure: None
+0:17:56 Memory Pressure: Moderate
+0:18:06 Memory Pressure: Moderate
+0:18:16 Memory Pressure: Moderate
+0:18:21 Memory Pressure: None
+0:18:31 Memory Pressure: Moderate
+0:18:41 Memory Pressure: Moderate
+0:18:51 Memory Pressure: Moderate
+0:19:01 Memory Pressure: Moderate
+0:19:11 Memory Pressure: Moderate
+0:19:21 Memory Pressure: Moderate
+0:19:31 Memory Pressure: Moderate
+0:19:42 Memory Pressure: Moderate
+0:19:52 Memory Pressure: Moderate
+0:20:02 Memory Pressure: Moderate
+0:20:12 Memory Pressure: Moderate
+0:20:22 Memory Pressure: Moderate
+0:20:32 Memory Pressure: Moderate
+0:20:42 Memory Pressure: Moderate
+0:20:52 Memory Pressure: Moderate
+0:20:57 Memory Pressure: Critical
+0:21:02 Memory Pressure: Critical
+0:21:07 Memory Pressure: Critical
+0:21:12 Memory Pressure: Moderate
+0:21:17 Memory Pressure: None
+0:21:32 Memory Pressure: Moderate
+0:21:37 Memory Pressure: None
+0:44:35 Microsoft.Shutdown.OnWindowClosing
+0:00:00 Startup
+0:00:00 Microsoft.DeleteProfileHelper.CleanUpEphemeralProfiles
+0:00:00 Microsoft.DeleteProfileHelper.CleanUpDeletedProfiles
 0:00:00 Microsoft.BrowserList.AddBrowser
 0:00:00 Browser1 Insert active Tab1 at 0
 0:00:00 Tab1 StartNav1 #auto_toplevel
@@ -12,71 +92,4 @@
 0:00:01 Tab1 StartNav2 #typed
 0:00:01 Tab1 FinishNav2
 0:00:01 Tab1 PageLoad
-0:01:07 Microsoft.UnloadController.IsUnclosableApp_IsNotWebApp
-0:00:00 Startup
-0:00:00 Microsoft.DeleteProfileHelper.CleanUpEphemeralProfiles
-0:00:00 Microsoft.DeleteProfileHelper.CleanUpDeletedProfiles
-0:00:00 Microsoft.NewBrowser_Popup
-0:00:00 Microsoft.BrowserList.AddBrowser
-0:00:00 Browser1 Insert active Tab1 at 0
-0:00:00 Tab1 StartNav1 #auto_toplevel
-0:00:00 Tab1 FinishNav1
-0:00:00 Tab1 PageLoad
-0:00:00 Tab1 StartNav2 #typed
-0:00:00 Tab1 FinishNav2
-0:00:00 Tab1 PageLoad
-0:07:35 Memory Pressure: Moderate
-0:07:45 Memory Pressure: Moderate
-0:07:50 Memory Pressure: None
-0:08:45 Memory Pressure: Moderate
-0:08:55 Memory Pressure: Moderate
-0:09:05 Memory Pressure: Moderate
-0:09:15 Memory Pressure: Moderate
-0:09:25 Memory Pressure: Moderate
-0:09:35 Memory Pressure: Moderate
-0:09:40 Memory Pressure: None
-0:09:50 Memory Pressure: Moderate
-0:10:00 Memory Pressure: Moderate
-0:10:05 Memory Pressure: None
-0:12:31 Memory Pressure: Moderate
-0:12:36 Memory Pressure: None
-0:13:31 Memory Pressure: Moderate
-0:13:41 Memory Pressure: Moderate
-0:13:46 Memory Pressure: None
-0:14:36 Memory Pressure: Moderate
-0:14:41 Memory Pressure: None
-0:14:46 Memory Pressure: Moderate
-0:14:51 Memory Pressure: None
-0:15:56 Memory Pressure: Moderate
-0:16:06 Memory Pressure: Moderate
-0:16:16 Memory Pressure: Moderate
-0:16:26 Memory Pressure: Moderate
-0:16:36 Memory Pressure: Moderate
-0:16:46 Memory Pressure: Moderate
-0:16:56 Memory Pressure: Moderate
-0:17:06 Memory Pressure: Moderate
-0:17:16 Memory Pressure: Moderate
-0:17:21 Memory Pressure: None
-0:18:01 Memory Pressure: Moderate
-0:18:11 Memory Pressure: Moderate
-0:18:21 Memory Pressure: Moderate
-0:18:31 Memory Pressure: Moderate
-0:18:41 Memory Pressure: Moderate
-0:18:46 Memory Pressure: None
-0:18:51 Memory Pressure: Moderate
-0:18:56 Memory Pressure: None
-0:19:26 Memory Pressure: Moderate
-0:19:36 Memory Pressure: None
-0:19:56 Memory Pressure: Moderate
-0:20:06 Memory Pressure: Moderate
-0:20:16 Memory Pressure: Critical
-0:20:21 Memory Pressure: Moderate
-0:20:31 Memory Pressure: Moderate
-0:20:41 Memory Pressure: Moderate
-0:20:51 Memory Pressure: Moderate
-0:21:01 Memory Pressure: Moderate
-0:21:11 Memory Pressure: Moderate
-0:21:21 Memory Pressure: Moderate
-0:21:31 Memory Pressure: Moderate
-0:21:41 Memory Pressure: Moderate
-0:21:51 Memory Pressure: Moderate
+0:06:39 Microsoft.Shutdown.OnWindowClosing
